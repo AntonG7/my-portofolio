@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anthony Guignard — Portfolio</title>
+    <meta name="description" content="Portfolio d'Anthony Guignard, Data-Scientist et PhD en Physique. Projets concrets avec l'IA et expertise en data science.">
+    <link rel="canonical" href="https://anthonyguignard.github.io/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://anthonyguignard.github.io/">
+    <meta property="og:title" content="Anthony Guignard — Data-Scientist, PhD in Physics">
+    <meta property="og:description" content="Portfolio d'Anthony Guignard, Data-Scientist et PhD en Physique. Projets concrets avec l'IA et expertise en data science.">
+    <meta property="og:image" content="https://anthonyguignard.github.io/assets/images/photo_profil_bleu.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Anthony Guignard — Data-Scientist, PhD in Physics">
+    <meta name="twitter:description" content="Portfolio d'Anthony Guignard, Data-Scientist et PhD en Physique. Projets concrets avec l'IA et expertise en data science.">
+    <meta name="twitter:image" content="https://anthonyguignard.github.io/assets/images/photo_profil_bleu.png">
+
+    <script>
+        (function(){
+            var t = localStorage.getItem('theme') ||
+                (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* CSS critique inliné pour optimiser le First Contentful Paint */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #7f7fd5;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            z-index: 100;
+            font-family: Inter, system-ui, -apple-system, sans-serif;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    <nav class="navbar" id="navbar" aria-label="Navigation principale">
+        <a href="#main-content" class="navbar__logo">Anthony Guignard</a>
+        <ul class="navbar__links" id="nav-links">
+            <li><a href="#about" class="navbar__link">À propos</a></li>
+            <li><a href="#projects" class="navbar__link">Projets</a></li>
+            <li><a href="#blog" class="navbar__link">Blog</a></li>
+            <li><a href="#contact" class="navbar__link">Contact</a></li>
+        </ul>
+        <div class="navbar__controls">
+            <button class="navbar__theme-toggle" id="theme-toggle" aria-label="Passer en mode clair">
+                <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="5"/>
+                    <line x1="12" y1="1" x2="12" y2="3"/>
+                    <line x1="12" y1="21" x2="12" y2="23"/>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                    <line x1="1" y1="12" x2="3" y2="12"/>
+                    <line x1="21" y1="12" x2="23" y2="12"/>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                </svg>
+                <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+            <button class="navbar__hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+                <span class="navbar__hamburger-line"></span>
+                <span class="navbar__hamburger-line"></span>
+                <span class="navbar__hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <main id="main-content">
+
+    <header class="hero">
+        <h1>Anthony Guignard</h1>
+        <p class="hero-subtitle">Data-Scientist, PhD in Physics</p>
+        <p class="hero-tagline">Je construis des projets concrets avec l'IA.</p>
+        <a href="#projects" class="hero-btn">Voir mes projets</a>
+    </header>
+
+    <section id="about" class="about">
+        <h2 class="about__title">À propos</h2>
+        <div class="about__body">
+            <div class="about__photo">
+                <img src="assets/images/photo_profil_bleu.png" alt="Photo d'Anthony Guignard" class="about__photo-img" loading="lazy">
+            </div>
+            <p class="about__text">Passionné par la technologie et l'intelligence artificielle, j'apprends à construire des projets concrets en utilisant les outils les plus avancés du marché. Ce portfolio est lui-même construit avec Claude Code.</p>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2 class="projects__title">Mes Projets</h2>
+        <div class="projects__grid" id="projects-grid">
+            <!-- injecté par JS depuis data/projects.json -->
+        </div>
+    </section>
+
+    <section id="blog" class="blog">
+        <h2 class="blog__title">Articles</h2>
+        <div class="blog__grid" id="blog-grid">
+            <!-- injecté par JS -->
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 class="contact__title">Me contacter</h2>
+        <form class="contact__form" id="contact-form" action="#" novalidate aria-label="Formulaire de contact">
+            <p class="form-legend"><span aria-hidden="true">*</span> Champs obligatoires</p>
+            <div class="form-group">
+                <label class="form-group__label" for="name">Nom <span aria-hidden="true">*</span></label>
+                <input class="form-group__input" type="text" id="name" name="name" placeholder="Votre nom" autocomplete="name" required aria-required="true" aria-describedby="name-error">
+                <span id="name-error" class="form-error" role="alert" hidden></span>
+            </div>
+            <div class="form-group">
+                <label class="form-group__label" for="email">Email <span aria-hidden="true">*</span></label>
+                <input class="form-group__input" type="email" id="email" name="email" placeholder="votre@email.com" autocomplete="email" required aria-required="true" aria-describedby="email-error">
+                <span id="email-error" class="form-error" role="alert" hidden></span>
+            </div>
+            <div class="form-group">
+                <label class="form-group__label" for="message">Message <span aria-hidden="true">*</span></label>
+                <textarea class="form-group__input form-group__input--textarea" id="message" name="message" rows="5" placeholder="Votre message..." required aria-required="true" aria-describedby="message-error"></textarea>
+                <span id="message-error" class="form-error" role="alert" hidden></span>
+            </div>
+            <button class="contact__submit" type="submit">Envoyer</button>
+        </form>
+    </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Anthony Guignard</p>
+        <ul class="footer__links">
+            <li><a href="https://github.com/anthonyguignard" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+        <p class="footer__credit">Construit avec Claude Code</p>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+</body>
+</html>

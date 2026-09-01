@@ -1,0 +1,30 @@
+[
+  {
+    "title": "MonPortfolio",
+    "description": "Mon portfolio développeur, construit entièrement avec Claude Code.",
+    "tags": ["HTML", "CSS", "JavaScript", "Claude Code"],
+    "link": "#",
+    "ariaLabel": "Voir le projet MonPortfolio"
+  },
+  {
+    "title": "Calculatrice CLI",
+    "description": "Une calculatrice en ligne de commande en Python.",
+    "tags": ["Python", "CLI"],
+    "link": "#",
+    "ariaLabel": "Voir le projet Calculatrice CLI"
+  },
+  {
+    "title": "API Notes",
+    "description": "Une API REST pour gérer des notes personnelles.",
+    "tags": ["Node.js", "Express", "REST API"],
+    "link": "#",
+    "ariaLabel": "Voir le projet API Notes"
+  },
+  {
+    "title": "Mountaine Bikes",
+    "description": "Préparation et customisation de vélo",
+    "tags": ["Scott Gambler", "Scott Voltage FR", "Bianchi Rosa"],
+    "link": "#",
+    "ariaLabel": "Voir le projet Mountaine Bikes"
+  }
+]

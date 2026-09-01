@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(brew:*)",
+      "Bash(gh:*)",
+      "mcp__github__create_or_update_file",
+      "Bash(printf:*)",
+      "Bash(curl:*)",
+      "Bash(wc -l /private/tmp/claude-501/-Users-anthonyguignard-Desktop-mon-portfolio/tasks/ab19ef8b7db9fab9b.output && tail -n 5 /private/tmp/claude-501/-Users-anthonyguignard-Desktop-mon-portfolio/tasks/ab19ef8b7db9fab9b.output | python3 -c \"import sys,json; [print\\(json.loads\\(l\\).get\\('type','?'\\)\\) for l in sys.stdin if l.strip\\(\\)]\" 2>/dev/null)",
+      "Bash(tail:*)"
+    ]
+  },
+  "enabledMcpjsonServers": [
+    "github"
+  ],
+  "enableAllProjectMcpServers": true
+}
