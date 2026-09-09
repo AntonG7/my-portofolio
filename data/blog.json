@@ -1,15 +1,5 @@
 [
   {
-    "slug": "tata",
-    "title": "tata",
-    "date": "1984-05-28",
-    "summary": "Ceci est un article de test nommé tata.",
-    "tags": [
-      "Test"
-    ],
-    "content": "<p>Contenu de l'article tata.</p>"
-  },
-  {
     "slug": "data-science-securite-aeronautique-haic",
     "title": "Data Science et Sécurité Aéronautique : Retour sur la mission internationale HAIC",
     "date": "2026-02-20",

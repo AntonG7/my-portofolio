@@ -119,7 +119,6 @@ if (contactForm) {
     }
 
     contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
         let valid = true;
 
         const name = document.getElementById('name').value.trim();
@@ -150,9 +149,8 @@ if (contactForm) {
             clearError('message');
         }
 
-        if (valid) {
-            contactForm.reset();
-            contactForm.insertAdjacentHTML('afterend', '<p class="form-success" role="status">Message envoyé avec succès !</p>');
+        if (!valid) {
+            e.preventDefault();
         }
     });
 
