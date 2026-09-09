@@ -331,20 +331,20 @@ section {
 
 .about__body {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    align-items: flex-start;
     gap: var(--space-3xl);
     width: 100%;
 }
 
 .about__photo {
     position: relative;
-    width: 100%;
-    max-width: 100%;
-    height: var(--photo-height-mobile);
+    width: 250px;
+    height: 250px;
+    min-width: 250px;
     border: var(--border-width) solid var(--color-accent);
     overflow: hidden;
-    order: 2;
+    flex-shrink: 0;
 }
 
 .about__photo-img {
@@ -361,7 +361,30 @@ section {
     font-weight: var(--weight-normal);
     padding: 0;
     line-height: var(--leading-normal);
-    order: 1;
+    flex: 1;
+}
+
+.about__content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-2xl);
+    width: 100%;
+    flex: 1;
+}
+
+.about__cv-link {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    padding: var(--space-md) var(--space-xl);
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+    border-radius: var(--radius);
+    text-decoration: none;
+    font-weight: var(--weight-normal);
+    transition: opacity var(--duration-hover);
+    text-align: center;
 }
 
 /* ===== Projects & Blog Cards ===== */
@@ -562,6 +585,33 @@ section {
     display: block;
 }
 
+.article__photo {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    border: var(--border-width) solid var(--color-card-border);
+    margin-bottom: var(--space-3xl);
+    display: block;
+}
+
+.article__dataset-link {
+    display: inline-block;
+    margin: var(--space-2xl) 0;
+    padding: var(--space-md) var(--space-lg);
+    background-color: var(--color-card-bg);
+    border: var(--border-width) solid var(--color-accent);
+    color: var(--color-accent);
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: all var(--duration-hover);
+}
+
+.article__dataset-link:hover {
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+}
+
 /* ===== Contact ===== */
 .contact__form {
     max-width: var(--form-max-width);
@@ -707,24 +757,23 @@ section {
 
     .about__body {
         flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
+        align-items: flex-start;
         gap: var(--space-5xl);
     }
 
     .about__photo {
-        width: 50%;
-        max-width: 50%;
-        height: var(--photo-height-desktop);
-        order: 1;
+        width: 250px;
+        height: 250px;
+        min-width: 250px;
+    }
+
+    .about__content {
+        flex: 1;
     }
 
     .about__text {
-        width: 50%;
-        max-width: 50%;
         padding: 0;
         font-size: var(--font-md);
-        order: 2;
     }
 
     .projects__grid {

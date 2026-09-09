@@ -1,30 +1,60 @@
 [
   {
+    "slug": "mon-portfolio",
     "title": "MonPortfolio",
     "description": "Mon portfolio développeur, construit entièrement avec Claude Code.",
     "tags": ["HTML", "CSS", "JavaScript", "Claude Code"],
-    "link": "#",
-    "ariaLabel": "Voir le projet MonPortfolio"
+    "link": "project.html?slug=mon-portfolio",
+    "ariaLabel": "Voir le projet MonPortfolio",
+    "content": "<p>Ce portfolio représente mon engagement envers le développement web moderne et les pratiques de collaboration avec l'IA. Construit entièrement en HTML, CSS et JavaScript vanilla, sans frameworks ni outils de build, il démontre la puissance de la simplicité et de la clarté du code.</p><p>Utiliser Claude Code comme co-pilote m'a permis d'accélérer le développement tout en maintenant le contrôle total sur l'architecture et le design. Chaque composant a été pensé pour être accessible, performant et maintenable.</p><p>Le site inclut un blog dynamique, un formulaire de contact fonctionnel, et un thème clair/sombre. C'est plus qu'un portfolio : c'est une démonstration pratique de comment les outils modernes d'IA peuvent augmenter la productivité des développeurs sans sacrifier la qualité du code.</p><p>Technologies : HTML5, CSS3 (variables et grid), JavaScript (Fetch API, Intersection Observer), Formsubmit pour les emails, GitHub Pages pour le déploiement.</p>"
   },
   {
-    "title": "Calculatrice CLI",
-    "description": "Une calculatrice en ligne de commande en Python.",
-    "tags": ["Python", "CLI"],
-    "link": "#",
-    "ariaLabel": "Voir le projet Calculatrice CLI"
+    "slug": "patrimoine-immobilier",
+    "title": "Patrimoine Immobilier de l'État",
+    "description": "Projet de publication open data des biens immobiliers publics français. Exploitation et structuration de données massives pour transparence gouvernementale. Accès public aux informations sur le patrimoine bâti de l'État.",
+    "tags": ["Python", "Open Data", "Gouvernement", "Data Engineering"],
+    "link": "project.html?slug=patrimoine-immobilier",
+    "ariaLabel": "Voir le projet Patrimoine Immobilier de l'État",
+    "imageUrl": "assets/images/die.jpg",
+    "datasetUrl": "https://data.economie.gouv.fr/explore/assets/parc_immobilier_etat_20231231/",
+    "content": "<p>Le projet Patrimoine Immobilier de l'État vise à moderniser la transparence du secteur public français en publiant les données des biens immobiliers gérés par l'État. Ce projet stratégique s'inscrit dans la démarche d'open gouvernement et de traçabilité des ressources publiques.</p><p>Ma contribution a porté sur l'extraction, le nettoyage et la structuration de données provenant de multiples sources hétérogènes. J'ai développé des pipelines de traitement capables de gérer des millions de lignes de données immobilières, géolocalisées et contextualisées.</p><p>Les enjeux techniques incluaient l'harmonisation des formats disparates, la gestion des données manquantes, et la validation de la qualité des données avant publication. Une infrastructure robuste a été mise en place pour garantir l'intégrité et la pérennité des données ouvertes.</p><p>Ce projet démontre comment la data science peut servir l'intérêt public en rendant accessibles des informations jusque-là fragmentées, facilitant ainsi les analyses d'urbanisme, d'environnement et de gestion budgétaire.</p>"
   },
   {
-    "title": "API Notes",
-    "description": "Une API REST pour gérer des notes personnelles.",
-    "tags": ["Node.js", "Express", "REST API"],
-    "link": "#",
-    "ariaLabel": "Voir le projet API Notes"
+    "slug": "operat-ademe",
+    "title": "Operat - Plateforme ADEME",
+    "description": "Alimentation et maintenance de la plateforme Operat de l'ADEME (Agence de la Transition Écologique). Gestion de données relatives aux performances énergétiques et environnementales des bâtiments français.",
+    "tags": ["Python", "Data", "ADEME", "Environnement", "Transition Écologique"],
+    "link": "project.html?slug=operat-ademe",
+    "ariaLabel": "Voir le projet Operat ADEME",
+    "imageUrl": "assets/images/operat.jpg",
+    "content": "<p>Operat est la plateforme de référence de l'ADEME pour le suivi des performances énergétiques et environnementales du parc immobilier français. Ce projet national contribue directement aux objectifs de neutralité carbone d'ici 2050, en fournissant des données essentielles aux décideurs publics et privés.</p><p>J'ai travaillé sur l'ingénierie des données, en développant des processus automatisés pour l'alimentation continue de la plateforme avec des données de consommation énergétique, d'émissions de gaz à effet de serre, et d'indicateurs environnementaux. La scalabilité et la fiabilité étaient critiques pour supporter des millions de bâtiments.</p><p>Les défis incluaient la réconciliation de données provenant de gestionnaires d'énergie variés, la gestion des mises à jour partielles, et l'assurance qualité en temps réel. Des alertes intelligentes ont été mises en place pour détecter les anomalies et les données aberrantes.</p><p>Ce travail s'inscrit dans un enjeu climatique majeur : fournir les outils de pilotage nécessaires pour accompagner la rénovation énergétique du parc immobilier français et accélérer la transition écologique.</p>"
   },
   {
-    "title": "Mountaine Bikes",
-    "description": "Préparation et customisation de vélo",
-    "tags": ["Scott Gambler", "Scott Voltage FR", "Bianchi Rosa"],
-    "link": "#",
-    "ariaLabel": "Voir le projet Mountaine Bikes"
+    "slug": "detection-fraude-selfim",
+    "title": "Détection Automatisée Fraude Immatriculation",
+    "description": "Développement d'un système de machine learning pour détecter les fraudes à l'immatriculation (Selfim). Analyse prédictive et classification de patterns suspects sur données transactionnelles massives.",
+    "tags": ["Machine Learning", "Python", "Fraude Detection", "Classification"],
+    "link": "project.html?slug=detection-fraude-selfim",
+    "ariaLabel": "Voir le projet Détection Fraude Immatriculation",
+    "imageUrl": "assets/images/selfim.jpg",
+    "content": "<p>Selfim est un système de détection automatisée des fraudes à l'immatriculation, visant à protéger l'intégrité du registre des sociétés françaises. Chaque année, des milliers de tentatives de fraude cherchent à exploiter des failles administratives. Ce projet propose une solution prédictive pour identifier les risques avant qu'ils ne se concrétisent.</p><p>J'ai développé des modèles de machine learning capables d'apprendre les patterns de fraude à partir de données historiques, en combinant des approches de classification supervisée et d'anomaly detection. Les features ont été construites en croisant données transactionnelles, graphes de relations, et indicateurs temporels.</p><p>Les enjeux incluaient le déséquilibre des classes (les fraudes sont rares), la gestion de données sensibles sous contrainte légale, et l'interprétabilité des prédictions (les alertes doivent être justifiables). Des mécanismes d'explainability ont été intégrés pour supporter les enquêteurs.</p><p>Le système traite en temps réel des milliers de demandes d'immatriculation, offrant une couche de protection invisible mais efficace contre les abus. C'est une application concrète de l'IA pour renforcer la confiance dans les institutions publiques.</p>"
+  },
+  {
+    "slug": "formation-quant",
+    "title": "Formation Quant Analyst",
+    "description": "Programme de formation aux métiers de quant analyst : analyse quantitative, modélisation financière et data science. Utilisation des plateformes Cloudera et Dataiku pour le traitement de données massives et la création de pipelines analytiques.",
+    "tags": ["Dataiku", "Cloudera", "Data Science", "Analytics", "Formation"],
+    "link": "project.html?slug=formation-quant",
+    "ariaLabel": "Voir le projet Formation Quant Analyst",
+    "content": "<p>Les quants (analystes quantitatifs) sont au cœur des décisions financières et stratégiques modernes. Ce programme de formation visait à préparer les futurs quants aux outils et méthodes de pointe du secteur, en mettant l'accent sur les données massives et l'automatisation des processus analytiques.</p><p>J'ai conçu et animé des formations couvrant l'analyse quantitative, la modélisation statistique, et l'ingénierie des données. Les participants ont appris à maîtriser Cloudera (Hadoop, Spark) pour le traitement Big Data et Dataiku pour la création de pipelines ML en production, sans nécessiter de code complexe.</p><p>Les cas d'étude couvrent l'évaluation de risques, l'optimisation de portefeuilles, et la prédiction de tendances de marché. L'approche pédagogique combine la théorie statistique, la programmation pratique, et des problèmes du monde réel tirés du secteur financier.</p><p>Cette formation représente l'intersection entre la physique quantitative (ma formation initiale), la data science, et les applications financières. Elle prépare les professionnels à naviguer un monde où les données et les algorithmes gouvernent les marchés.</p>"
+  },
+  {
+    "slug": "these-nuages-glace",
+    "title": "Thèse : Propriétés Microphysiques des Nuages de Glace",
+    "description": "Recherche doctorale en physique atmosphérique. Étude approfondie des propriétés des cristaux de glace en haute altitude et leurs impacts sur les systèmes nuageux. Analyse de données satellites (CloudSat, CALIPSO) et modélisation physique.",
+    "tags": ["Recherche", "Physique", "Atmosphère", "Data Science", "PhD"],
+    "link": "project.html?slug=these-nuages-glace",
+    "ariaLabel": "Voir le projet Thèse Nuages de Glace",
+    "content": "<p>Les nuages de glace en haute altitude jouent un rôle critique dans l'équilibre radiatif terrestre et le dérèglement climatique. Contrairement aux nuages bas et aux précipitations évidentes, ces cristaux invisibles piègent la chaleur infrarouge et influencent directement les températures planétaires. Ma thèse explore les propriétés microphysiques fondamentales de ces cristaux et leur variabilité spatiale et temporelle.</p><p>J'ai développé des méthodes innovantes de fusion de données provenant de deux satellites de la constellation A-Train : CloudSat (radar 94 GHz) et CALIPSO (lidar). Ces instruments complémentaires permettent une vision en coupe des nuages, révélant la structure verticale, la concentration de cristaux, et la distribution de tailles. L'analyse statistique de millions de profils de nuages a conduit à des climatologies nouvelles.</p><p>La complexité microphysique exige une modélisation poussée : les cristaux de glace adoptent des formes diverses (aiguilles, plaques, agrégats) selon les conditions de température et d'humidité, chacune affectant différemment le rayonnement et la dynamique du nuage. J'ai paramétrisé ces relations pour améliorer les modèles climatiques globaux.</p><p>Cette recherche contribue directement aux rapports du GIEC et à la compréhension scientifique du changement climatique. Elle représente l'essence de ma démarche : transformer des données complexes en connaissance actionnable pour résoudre les défis de notre époque.</p>"
   }
 ]
