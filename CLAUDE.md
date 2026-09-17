@@ -14,6 +14,9 @@ Site portfolio statique construit avec HTML, CSS et JavaScript vanilla. Pas de f
 - `data/` — contenu en JSON consommé par le JS (`projects.json`, `blog.json`, `testimonials.json`, `biens-etat.json`)
 - `assets/` — images et ressources statiques
 - `build_biens_etat.py` — script de conversion du CSV open data (patrimoine immobilier de l'État) vers `data/biens-etat.json`, à relancer manuellement si le dataset source est mis à jour
+- `CNAME` — domaine personnalisé lu par GitHub Pages ; ne pas supprimer, le site serait à nouveau servi depuis l'URL `.github.io`
+
+La barre de navigation, le pied de page et le sélecteur de thème sont dupliqués dans les quatre pages HTML (pas de moteur de templates) : toute modification de l'un doit être répercutée dans les quatre.
 
 ## Conventions de code
 
@@ -24,16 +27,19 @@ Site portfolio statique construit avec HTML, CSS et JavaScript vanilla. Pas de f
 ## Design
 
 - Design responsive mobile-first : les styles de base ciblent le mobile, utiliser les media queries `min-width` pour les écrans plus grands
-- Fond sombre, texte clair — esthétique minimaliste et professionnelle
+- Esthétique minimaliste et professionnelle
 - Police : Inter (Google Fonts)
-- Couleur d'accent : `#7f7fd5`
+- **Toutes les valeurs de style passent par les variables CSS déclarées dans `:root`** (couleurs, espacements, tailles de police, z-index). Ne pas écrire de valeur en dur : réutiliser un token existant ou en ajouter un.
+- **Thème clair/sombre** : basculé par l'attribut `data-theme` sur `<html>`, mémorisé dans `localStorage`, avec repli sur `prefers-color-scheme`. Un script inline en `<head>` de chaque page l'applique avant le rendu pour éviter un flash. Toute nouvelle couleur doit être déclinée dans les deux thèmes.
+- Couleurs d'accent : `--color-accent` (vert — `#64ffda` en sombre, `#0d9373` en clair) pour l'état par défaut, `--color-accent-hover` (violet — `#b98eff` en sombre, `#7c3aed` en clair) pour les survols
 
 ## Interdictions
 - Pas de jQuery
 - Pas de framework CSS (Bootstrap, Tailwind)
 - Pas de bundler (Webpack, Vite)
 - Pas de base de données ni de backend — le site reste 100% statique (hébergement GitHub Pages)
-- Les librairies JS légères via CDN sont autorisées au cas par cas (ex. Leaflet pour la carte de `webapps.html`), tant qu'il n'y a ni bundler ni gestionnaire de paquets
+- Les librairies JS légères via CDN sont autorisées au cas par cas (aujourd'hui : Leaflet et Leaflet.markercluster pour la carte de `webapps.html`), tant qu'il n'y a ni bundler ni gestionnaire de paquets
+- Le formulaire de contact passe par Formsubmit.co (pas de serveur à maintenir) : son `action` pointe vers l'adresse e-mail de destination, et les champs cachés `_redirect` / `_captcha` doivent être conservés
 - Ne jamais modifier ce fichier CLAUDE.md sans permission explicite
 
 ## Développement
@@ -42,4 +48,10 @@ Prévisualiser en local :
 ```
 python3 -m http.server
 ```
-Ou ouvrir `index.html` directement dans un navigateur.
+Le serveur est nécessaire pour les pages qui chargent du JSON via `fetch` (ouvrir le fichier HTML directement échoue à cause des restrictions CORS sur `file://`).
+
+Pour tester depuis un smartphone sur le même réseau Wi-Fi : récupérer l'IP locale du Mac (`ipconfig getifaddr en1`) et ouvrir `http://<IP>:8000` sur le téléphone.
+
+## Déploiement
+
+Le site est publié sur GitHub Pages depuis la branche `main` (dépôt `AntonG7/my-portofolio`), à l'adresse `https://anthony-guignard.fr`. Chaque `push` sur `main` déclenche un déploiement automatique, effectif au bout d'une à deux minutes.
