@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebApps — Anthony Guignard</title>
+    <meta name="description" content="Carte interactive du patrimoine immobilier de l'État français, données ouvertes filtrables par région, ministère, type de bien et état de santé.">
+    <link rel="canonical" href="https://anthony-guignard.fr/webapps.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://anthony-guignard.fr/webapps.html">
+    <meta property="og:title" content="WebApps — Anthony Guignard">
+    <meta property="og:description" content="Carte interactive du patrimoine immobilier de l'État français, données ouvertes filtrables par région, ministère, type de bien et état de santé.">
+    <meta property="og:image" content="https://anthony-guignard.fr/assets/images/photo_profil_bleu.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="WebApps — Anthony Guignard">
+    <meta name="twitter:description" content="Carte interactive du patrimoine immobilier de l'État français, données ouvertes filtrables par région, ministère, type de bien et état de santé.">
+    <meta name="twitter:image" content="https://anthony-guignard.fr/assets/images/photo_profil_bleu.png">
+
+    <script>
+        (function(){
+            var t = localStorage.getItem('theme') ||
+                (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+    <script defer src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <style>
+        /* CSS critique inliné pour optimiser le First Contentful Paint */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #7f7fd5;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            z-index: 100;
+            font-family: Inter, system-ui, -apple-system, sans-serif;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    <nav class="navbar" id="navbar" aria-label="Navigation principale">
+        <div class="navbar__inner">
+            <ul class="navbar__links" id="nav-links">
+                <li><a href="index.html#about" class="navbar__link">À propos</a></li>
+                <li><a href="index.html#projects" class="navbar__link">Projets</a></li>
+                <li><a href="index.html#blog" class="navbar__link">Articles</a></li>
+                <li><a href="webapps.html" class="navbar__link">WebApps</a></li>
+                <li><a href="index.html#contact" class="navbar__link">Contact</a></li>
+            </ul>
+            <div class="navbar__controls">
+                <button class="navbar__theme-toggle" id="theme-toggle" aria-label="Passer en mode clair">
+                    <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="5"/>
+                        <line x1="12" y1="1" x2="12" y2="3"/>
+                        <line x1="12" y1="21" x2="12" y2="23"/>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                        <line x1="1" y1="12" x2="3" y2="12"/>
+                        <line x1="21" y1="12" x2="23" y2="12"/>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                    </svg>
+                    <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                </button>
+                <button class="navbar__hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+                    <span class="navbar__hamburger-line"></span>
+                    <span class="navbar__hamburger-line"></span>
+                    <span class="navbar__hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="webapps-page" id="main-content">
+        <h1 class="webapps__title">Patrimoine immobilier de l'État</h1>
+        <p class="webapps__intro">Carte du patrimoine bâti de l'État français, à partir des données ouvertes que j'ai contribué à publier. Chaque puce est un bien géolocalisé, sa taille est proportionnelle à sa surface.</p>
+
+        <div class="map-filters">
+            <div class="map-filters__group">
+                <label class="map-filters__label" for="filter-region">Région</label>
+                <select class="map-filters__select" id="filter-region">
+                    <option value="">Toutes</option>
+                </select>
+            </div>
+            <div class="map-filters__group">
+                <label class="map-filters__label" for="filter-dept">Département</label>
+                <select class="map-filters__select" id="filter-dept">
+                    <option value="">Tous</option>
+                </select>
+            </div>
+            <div class="map-filters__group">
+                <label class="map-filters__label" for="filter-ministere">Ministère</label>
+                <select class="map-filters__select" id="filter-ministere">
+                    <option value="">Tous</option>
+                </select>
+            </div>
+            <div class="map-filters__group">
+                <label class="map-filters__label" for="filter-type">Type de bien</label>
+                <select class="map-filters__select" id="filter-type">
+                    <option value="">Tous</option>
+                </select>
+            </div>
+            <div class="map-filters__group">
+                <label class="map-filters__label" for="filter-etat">État de santé</label>
+                <select class="map-filters__select" id="filter-etat">
+                    <option value="">Tous</option>
+                </select>
+            </div>
+            <div class="map-filters__group map-filters__group--surface">
+                <label class="map-filters__label" id="filter-surface-label">Surface</label>
+                <div class="map-filters__range-slider">
+                    <div class="map-filters__range-track"></div>
+                    <div class="map-filters__range-fill" id="filter-surface-fill"></div>
+                    <input type="range" class="map-filters__range" id="filter-surface-min" min="0" max="50000" step="50" value="0" aria-label="Surface minimale">
+                    <input type="range" class="map-filters__range" id="filter-surface-max" min="0" max="50000" step="50" value="50000" aria-label="Surface maximale">
+                </div>
+            </div>
+            <button class="map-filters__reset" id="filters-reset" type="button">Réinitialiser</button>
+        </div>
+
+        <p class="webapps__count" id="webapps-count" aria-live="polite"></p>
+
+        <div class="webapps-map-wrapper">
+            <div id="map" class="webapps-map"></div>
+            <ul class="webapps-legend" id="webapps-legend" aria-label="Légende des ministères">
+                <!-- injecté par JS -->
+            </ul>
+        </div>
+
+        <p class="webapps__source">Source : <a href="https://data.economie.gouv.fr/explore/dataset/parc_immobilier_etat_20231231/" target="_blank" rel="noopener">data.economie.gouv.fr — Parc immobilier de l'État</a>. Seuls les biens géolocalisés dans le jeu de données sont affichés.</p>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Anthony Guignard</p>
+        <ul class="footer__links">
+            <li><a href="https://github.com/AntonG7" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/anthony-guignard-8b915888/" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+    </footer>
+
+    <script src="js/webapps.js" defer></script>
+</body>
+</html>

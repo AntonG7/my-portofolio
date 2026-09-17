@@ -68,7 +68,7 @@ async function loadProjects() {
             <article class="project-card">
                 <div class="project-card__banner"></div>
                 <div class="project-card__body">
-                    <h3 class="project-card__title">${project.title}</h3>
+                    <h3 class="project-card__title"><a href="${project.link}" class="card-title-link">${project.title}</a></h3>
                     <p class="project-card__desc">${project.description}</p>
                     ${project.impact && project.impact.length ? `
                         <ul class="project-card__impact">
@@ -90,6 +90,9 @@ async function loadProjects() {
 }
 
 loadProjects();
+
+// Nombre de WebApps (une seule pour l'instant, pas de fichier data dédié)
+animateCounter(document.getElementById('stat-webapps'), 1);
 
 // Chargement des recommandations (masqué tant que data/testimonials.json est vide)
 async function loadTestimonials() {
@@ -132,7 +135,7 @@ async function loadBlog() {
                 <div class="blog-card__banner"></div>
                 <div class="blog-card__body">
                     <time class="blog-card__date" datetime="${post.date}">${formatDate(post.date)}</time>
-                    <h3 class="blog-card__title">${post.title}</h3>
+                    <h3 class="blog-card__title"><a href="blog.html?slug=${post.slug}" class="card-title-link">${post.title}</a></h3>
                     <p class="blog-card__summary">${post.summary}</p>
                     <ul class="blog-card__tags">
                         ${post.tags.map(t => `<li class="blog-card__tag">${t}</li>`).join('')}

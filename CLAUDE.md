@@ -8,10 +8,12 @@ Site portfolio statique construit avec HTML, CSS et JavaScript vanilla. Pas de f
 
 ## Architecture
 
-- `index.html` — page principale, liens vers CSS/JS externes
-- `style.css` — tous les styles
-- `script.js` — toute l'interactivité
+- `index.html`, `project.html`, `blog.html`, `webapps.html` — pages du site
+- `css/style.css` — tous les styles
+- `js/` — un fichier JS par page (`main.js`, `project.js`, `blog.js`, `webapps.js`)
+- `data/` — contenu en JSON consommé par le JS (`projects.json`, `blog.json`, `testimonials.json`, `biens-etat.json`)
 - `assets/` — images et ressources statiques
+- `build_biens_etat.py` — script de conversion du CSV open data (patrimoine immobilier de l'État) vers `data/biens-etat.json`, à relancer manuellement si le dataset source est mis à jour
 
 ## Conventions de code
 
@@ -30,6 +32,8 @@ Site portfolio statique construit avec HTML, CSS et JavaScript vanilla. Pas de f
 - Pas de jQuery
 - Pas de framework CSS (Bootstrap, Tailwind)
 - Pas de bundler (Webpack, Vite)
+- Pas de base de données ni de backend — le site reste 100% statique (hébergement GitHub Pages)
+- Les librairies JS légères via CDN sont autorisées au cas par cas (ex. Leaflet pour la carte de `webapps.html`), tant qu'il n'y a ni bundler ni gestionnaire de paquets
 - Ne jamais modifier ce fichier CLAUDE.md sans permission explicite
 
 ## Développement

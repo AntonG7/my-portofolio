@@ -18,6 +18,7 @@
     "ariaLabel": "Voir le projet Patrimoine Immobilier de l'État",
     "imageUrl": "assets/images/die.jpg",
     "datasetUrl": "https://data.economie.gouv.fr/explore/assets/parc_immobilier_etat_20231231/",
+    "webappUrl": "webapps.html",
     "impact": [
         "À compléter par Anthony : volume de données traité (ex. nombre de lignes / Go)",
         "À compléter par Anthony : gain de temps ou de fiabilité mesuré sur les pipelines",
