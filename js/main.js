@@ -63,7 +63,7 @@ async function loadProjects() {
     try {
         const res = await fetch('data/projects.json');
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const projects = await res.json();
+        const projects = (await res.json()).filter(p => p.slug !== 'mon-portfolio');
         grid.innerHTML = projects.map(project => `
             <article class="project-card">
                 <div class="project-card__banner"></div>
@@ -126,7 +126,7 @@ async function loadBlog() {
     const grid = document.getElementById('blog-grid');
     try {
         const res = await fetch('data/blog.json');
-        const posts = await res.json();
+        const posts = (await res.json()).filter(p => p.slug !== 'construire-avec-claude-code');
         grid.innerHTML = posts.map(post => `
             <article class="blog-card">
                 <div class="blog-card__banner"></div>

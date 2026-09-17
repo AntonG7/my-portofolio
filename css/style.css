@@ -357,17 +357,17 @@ section {
 
 .about__body {
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
     gap: var(--space-3xl);
     width: 100%;
 }
 
 .about__photo {
     position: relative;
-    width: 250px;
-    height: 250px;
-    min-width: 250px;
+    width: 220px;
+    height: 220px;
+    min-width: 220px;
     border: var(--border-width) solid var(--color-accent);
     overflow: hidden;
     flex-shrink: 0;
@@ -397,6 +397,25 @@ section {
     gap: var(--space-2xl);
     width: 100%;
     flex: 1;
+}
+
+.about__skills {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.about__skills li {
+    padding-left: var(--space-lg);
+    border-left: var(--border-width) solid var(--color-accent);
+    color: var(--color-text-secondary);
+    font-size: var(--font-sm);
+    line-height: var(--leading-normal);
+}
+
+.about__skills strong {
+    color: var(--color-text);
+    font-weight: var(--weight-normal);
 }
 
 .about__cv-link {
@@ -797,11 +816,6 @@ section {
     color: var(--color-footer);
 }
 
-.footer__credit {
-    margin-top: var(--space-sm);
-    font-size: var(--font-sm);
-}
-
 /* ===== Fade-in ===== */
 .fade-in {
     opacity: 0;
@@ -867,9 +881,9 @@ section {
     }
 
     .about__photo {
-        width: 250px;
-        height: 250px;
-        min-width: 250px;
+        width: 360px;
+        height: 360px;
+        min-width: 360px;
     }
 
     .about__content {
