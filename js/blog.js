@@ -43,7 +43,7 @@ function formatDate(dateStr) {
 }
 
 function updateMetaTags(post) {
-    const baseUrl = 'https://anthonyguignard.github.io';
+    const baseUrl = 'https://anthony-guignard.fr';
     const articleUrl = `${baseUrl}/blog.html?slug=${post.slug}`;
 
     // Meta description
