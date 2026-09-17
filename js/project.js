@@ -35,6 +35,14 @@ async function loadProject() {
                 <ul class="article__tags">
                     ${project.tags.map(tag => `<li class="article__tag">${tag}</li>`).join('')}
                 </ul>
+                ${project.impact && project.impact.length ? `
+                    <div class="article__impact">
+                        <h2 class="article__impact-title">Impact</h2>
+                        <ul class="article__impact-list">
+                            ${project.impact.map(i => `<li>${i}</li>`).join('')}
+                        </ul>
+                    </div>
+                ` : ''}
                 ${project.datasetUrl ? `<a href="${project.datasetUrl}" target="_blank" rel="noopener" class="article__dataset-link">Accéder aux données 📊</a>` : ''}
                 <div class="article__content">
                     ${project.content}

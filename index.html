@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anthony Guignard — Portfolio</title>
-    <meta name="description" content="Portfolio d'Anthony Guignard, Data-Scientist et PhD en Physique. Projets concrets avec l'IA et expertise en data science.">
+    <title>Anthony Guignard — Responsable Data &amp; Tech Lead IA</title>
+    <meta name="description" content="Portfolio d'Anthony Guignard, PhD en Physique, spécialiste data &amp; IA. Conception et pilotage de projets data à impact, du prototype à la production.">
     <link rel="canonical" href="https://anthony-guignard.fr/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://anthony-guignard.fr/">
-    <meta property="og:title" content="Anthony Guignard — Data-Scientist, PhD in Physics">
-    <meta property="og:description" content="Portfolio d'Anthony Guignard, Data-Scientist et PhD en Physique. Projets concrets avec l'IA et expertise en data science.">
+    <meta property="og:title" content="Anthony Guignard — Responsable Data &amp; Tech Lead IA">
+    <meta property="og:description" content="Portfolio d'Anthony Guignard, PhD en Physique, spécialiste data &amp; IA. Conception et pilotage de projets data à impact, du prototype à la production.">
     <meta property="og:image" content="https://anthony-guignard.fr/assets/images/photo_profil_bleu.png">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Anthony Guignard — Data-Scientist, PhD in Physics">
-    <meta name="twitter:description" content="Portfolio d'Anthony Guignard, Data-Scientist et PhD en Physique. Projets concrets avec l'IA et expertise en data science.">
+    <meta name="twitter:title" content="Anthony Guignard — Responsable Data &amp; Tech Lead IA">
+    <meta name="twitter:description" content="Portfolio d'Anthony Guignard, PhD en Physique, spécialiste data &amp; IA. Conception et pilotage de projets data à impact, du prototype à la production.">
     <meta name="twitter:image" content="https://anthony-guignard.fr/assets/images/photo_profil_bleu.png">
 
     <script>
@@ -89,9 +89,24 @@
 
     <header class="hero">
         <h1>Anthony Guignard</h1>
-        <p class="hero-subtitle">Data-Scientist, PhD in Physics</p>
-        <p class="hero-tagline">Je construis des projets concrets avec l'IA.</p>
+        <p class="hero-subtitle">Data &amp; IA — de la donnée à la décision</p>
+        <p class="hero-tagline">PhD en Physique, je conçois et pilote des projets data/IA à impact, du prototype à la production.</p>
+        <p class="hero-availability">Actuellement en recherche d'un poste de <strong>Responsable Data</strong> ou <strong>Tech Lead IA</strong>.</p>
         <a href="#projects" class="hero-btn">Voir mes projets</a>
+        <div class="hero-stats" aria-label="Chiffres clés">
+            <div class="hero-stat">
+                <span class="hero-stat__value" id="stat-projects">0</span>
+                <span class="hero-stat__label">Projets data &amp; IA</span>
+            </div>
+            <div class="hero-stat">
+                <span class="hero-stat__value">PhD</span>
+                <span class="hero-stat__label">Physique</span>
+            </div>
+            <div class="hero-stat">
+                <span class="hero-stat__value" id="stat-articles">0</span>
+                <span class="hero-stat__label">Articles publiés</span>
+            </div>
+        </div>
     </header>
 
     <section id="about" class="about">
@@ -101,7 +116,7 @@
                 <img src="assets/images/photo_profil_bleu.png" alt="Photo d'Anthony Guignard" class="about__photo-img" loading="lazy">
             </div>
             <div class="about__content">
-                <p class="about__text">Passionné par la technologie et l'intelligence artificielle, j'apprends à construire des projets concrets en utilisant les outils les plus avancés du marché. Ce portfolio est lui-même construit avec Claude Code.</p>
+                <p class="about__text">Docteur en physique, je conçois des systèmes data et IA qui transforment des données complexes en décisions actionnables — de l'ingénierie de données massives à la mise en production de modèles de machine learning. J'aime autant structurer une architecture data que transmettre et faire monter en compétence les équipes avec lesquelles je travaille.</p>
                 <a href="assets/CV_responsable_data_IA.pdf" download class="about__cv-link">Télécharger mon CV 📄</a>
             </div>
         </div>
@@ -111,6 +126,13 @@
         <h2 class="projects__title">Mes Projets</h2>
         <div class="projects__grid" id="projects-grid">
             <!-- injecté par JS depuis data/projects.json -->
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials" hidden>
+        <h2 class="testimonials__title">Recommandations</h2>
+        <div class="testimonials__grid" id="testimonials-grid">
+            <!-- injecté par JS depuis data/testimonials.json — masqué tant que ce fichier est vide -->
         </div>
     </section>
 

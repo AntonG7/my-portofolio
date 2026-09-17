@@ -39,6 +39,23 @@ requestAnimationFrame(() => {
     sections.forEach(section => fadeObserver.observe(section));
 });
 
+// Anime un compteur numérique, sauf si l'utilisateur préfère un mouvement réduit
+function animateCounter(el, target) {
+    if (!el) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        el.textContent = target;
+        return;
+    }
+    const duration = 800;
+    const start = performance.now();
+    function step(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        el.textContent = Math.round(progress * target);
+        if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+}
+
 // Chargement des projets
 async function loadProjects() {
     const grid = document.getElementById('projects-grid');
@@ -53,6 +70,11 @@ async function loadProjects() {
                 <div class="project-card__body">
                     <h3 class="project-card__title">${project.title}</h3>
                     <p class="project-card__desc">${project.description}</p>
+                    ${project.impact && project.impact.length ? `
+                        <ul class="project-card__impact">
+                            ${project.impact.map(i => `<li class="project-card__impact-item">${i}</li>`).join('')}
+                        </ul>
+                    ` : ''}
                     <ul class="project-card__tags">
                         ${project.tags.map(t => `<li class="project-card__tag">${t}</li>`).join('')}
                     </ul>
@@ -60,6 +82,7 @@ async function loadProjects() {
                 </div>
             </article>
         `).join('');
+        animateCounter(document.getElementById('stat-projects'), projects.length);
     } catch (err) {
         console.error('loadProjects:', err);
         grid.innerHTML = '<p class="projects__error">Impossible de charger les projets.</p>';
@@ -67,6 +90,32 @@ async function loadProjects() {
 }
 
 loadProjects();
+
+// Chargement des recommandations (masqué tant que data/testimonials.json est vide)
+async function loadTestimonials() {
+    const section = document.getElementById('testimonials');
+    const grid = document.getElementById('testimonials-grid');
+    if (!section || !grid) return;
+    try {
+        const res = await fetch('data/testimonials.json');
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const testimonials = await res.json();
+        if (!testimonials.length) return;
+        grid.innerHTML = testimonials.map(t => `
+            <blockquote class="testimonial-card">
+                <p class="testimonial-card__quote">${t.quote}</p>
+                <footer class="testimonial-card__author">
+                    <a href="${t.linkedinUrl}" target="_blank" rel="noopener">${t.author}${t.role ? `, ${t.role}` : ''}</a>
+                </footer>
+            </blockquote>
+        `).join('');
+        section.hidden = false;
+    } catch (err) {
+        console.error('loadTestimonials:', err);
+    }
+}
+
+loadTestimonials();
 
 // Chargement des articles du blog
 function formatDate(dateStr) {
@@ -92,6 +141,7 @@ async function loadBlog() {
                 </div>
             </article>
         `).join('');
+        animateCounter(document.getElementById('stat-articles'), posts.length);
     } catch {
         grid.innerHTML = '<p class="blog__error">Les articles ne sont pas disponibles.</p>';
     }
