@@ -695,6 +695,17 @@ section {
     display: block;
 }
 
+.article__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    margin: var(--space-2xl) 0;
+}
+
+.article__links .article__dataset-link {
+    margin: 0;
+}
+
 .article__dataset-link {
     display: inline-block;
     margin: var(--space-2xl) 0;

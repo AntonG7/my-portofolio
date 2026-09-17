@@ -75,6 +75,9 @@
     "tags": ["Recherche", "Physique", "Atmosphère", "Data Science", "PhD"],
     "link": "project.html?slug=these-nuages-glace",
     "ariaLabel": "Voir le projet Thèse Nuages de Glace",
+    "imageUrl": "assets/images/a-train.png",
+    "publicationUrl": "https://acp.copernicus.org/articles/12/503/2012/acp-12-503-2012.html",
+    "thesisPdfUrl": "https://ara.lmd.polytechnique.fr/thesis/2012_these_guignard.pdf",
     "impact": [
         "À compléter par Anthony : volume de profils satellites analysés",
         "À compléter par Anthony : publications ou citations issues de la thèse"

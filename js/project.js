@@ -44,6 +44,12 @@ async function loadProject() {
                     </div>
                 ` : ''}
                 ${project.datasetUrl ? `<a href="${project.datasetUrl}" target="_blank" rel="noopener" class="article__dataset-link">Accéder aux données 📊</a>` : ''}
+                ${project.publicationUrl || project.thesisPdfUrl ? `
+                    <div class="article__links">
+                        ${project.publicationUrl ? `<a href="${project.publicationUrl}" target="_blank" rel="noopener" class="article__dataset-link">Voir la publication scientifique 📄</a>` : ''}
+                        ${project.thesisPdfUrl ? `<a href="${project.thesisPdfUrl}" target="_blank" rel="noopener" class="article__dataset-link">Télécharger la thèse 📄</a>` : ''}
+                    </div>
+                ` : ''}
                 <div class="article__content">
                     ${project.content}
                 </div>
