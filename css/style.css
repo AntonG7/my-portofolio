@@ -299,13 +299,6 @@ section {
     max-width: 400px;
 }
 
-.hero-availability {
-    margin-top: var(--space-lg);
-    font-size: var(--font-base);
-    color: var(--color-accent);
-    max-width: 400px;
-}
-
 .hero-stats {
     display: flex;
     flex-wrap: wrap;
