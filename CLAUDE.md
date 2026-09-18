@@ -15,6 +15,8 @@ Site portfolio statique construit avec HTML, CSS et JavaScript vanilla. Pas de f
 - `assets/` — images et ressources statiques
 - `build_biens_etat.py` — script de conversion du CSV open data (patrimoine immobilier de l'État) vers `data/biens-etat.json`, à relancer manuellement si le dataset source est mis à jour
 - `CNAME` — domaine personnalisé lu par GitHub Pages ; ne pas supprimer, le site serait à nouveau servi depuis l'URL `.github.io`
+- `googled4ef31e7c0065d4a.html` — fichier de vérification Google Search Console ; contenu opaque mais ne pas supprimer ni renommer, sa disparition invaliderait la propriété vérifiée
+- `sitemap.xml` — écrit à la main : toute entrée ajoutée à `data/projects.json` ou `data/blog.json` doit y être reportée sous la forme `project.html?slug=...` / `blog.html?slug=...` (ne pas y lister les contenus filtrés de l'affichage dans `js/main.js`)
 
 La barre de navigation, le pied de page et le sélecteur de thème sont dupliqués dans les quatre pages HTML (pas de moteur de templates) : toute modification de l'un doit être répercutée dans les quatre.
 

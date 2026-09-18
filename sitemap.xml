@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://anthony-guignard.fr/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://anthony-guignard.fr/webapps.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Projets (project.html?slug=...) -->
+    <url>
+        <loc>https://anthony-guignard.fr/project.html?slug=patrimoine-immobilier</loc>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://anthony-guignard.fr/project.html?slug=operat-ademe</loc>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://anthony-guignard.fr/project.html?slug=detection-fraude-selfim</loc>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://anthony-guignard.fr/project.html?slug=formation-quant</loc>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://anthony-guignard.fr/project.html?slug=these-nuages-glace</loc>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Articles (blog.html?slug=...) -->
+    <url>
+        <loc>https://anthony-guignard.fr/blog.html?slug=data-science-securite-aeronautique-haic</loc>
+        <lastmod>2026-02-20</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://anthony-guignard.fr/blog.html?slug=python-pour-la-data-science</loc>
+        <lastmod>2026-01-15</lastmod>
+        <priority>0.6</priority>
+    </url>
+</urlset>
