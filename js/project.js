@@ -28,7 +28,7 @@ async function loadProject() {
 
         container.innerHTML = `
             <article class="article">
-                <img src="${project.imageUrl || 'assets/images/photo_profil.png'}" alt="Image du projet ${project.title}" class="article__photo">
+                <img src="${project.imageUrl || 'assets/images/photo_profil.jpg'}" alt="Image du projet ${project.title}" class="article__photo">
                 <a href="index.html#projects" class="article__back">← Retour aux projets</a>
                 <h1 class="article__title">${project.title}</h1>
                 <p class="article__description">${project.description}</p>
