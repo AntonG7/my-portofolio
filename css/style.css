@@ -85,6 +85,7 @@
     --textarea-min: 120px;
     --photo-height-mobile: 500px;
     --photo-height-desktop: 475px;
+    --footer-image-width-desktop: 60%;
 
     /* Z-indexes */
     --z-navbar: 100;
@@ -758,6 +759,15 @@ section {
     display: block;
 }
 
+.article__footer-image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    border: var(--border-width) solid var(--color-card-border);
+    margin: var(--space-3xl) auto 0;
+    display: block;
+}
+
 .article__links {
     display: flex;
     flex-wrap: wrap;
@@ -1161,6 +1171,10 @@ section {
 @media (min-width: 768px) {
     .navbar__hamburger {
         display: none;
+    }
+
+    .article__footer-image {
+        width: var(--footer-image-width-desktop);
     }
 
     .navbar__inner {
