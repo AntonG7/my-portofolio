@@ -54,7 +54,7 @@ async function loadProject() {
                 <div class="article__content">
                     ${project.content}
                 </div>
-                ${project.footerImageUrl ? `<img src="${project.footerImageUrl}" alt="Visuel complémentaire du projet ${project.title}" class="article__footer-image" loading="lazy">` : ''}
+                ${project.footerImageUrl ? `<img src="${project.footerImageUrl}" alt="${project.footerImageAlt || `Visuel complémentaire du projet ${project.title}`}" class="article__footer-image" loading="lazy">` : ''}
             </article>
         `;
     } catch (err) {
